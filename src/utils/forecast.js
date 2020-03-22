@@ -11,16 +11,15 @@ const forecast = (latitude, longitude, callback) => {
             callback('Forecast for this location could not be found. Try adjusting your search coordinates', undefined)
         } 
         
-        else { 
-            callback(undefined, {
-                current : body.currently , 
-                location : body.timezone , 
-                forecast : body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + ' chance of rain'
-                
-            }) 
+        else {  
+
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. The temperature high is ' + daily.body.data[0].temperatureHigh + '. The temperature low is' + daily.body.data[0].temperatureLow + '. There is a ' + body.currently.precipProbability + ' chance of rain'  
+            ) 
         }
         
     })
 }
 
-module.exports = forecast
+module.exports = forecast 
+// current : body.currently , 
+//location : body.timezone , 
