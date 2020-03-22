@@ -13,8 +13,8 @@ const forecast = (latitude, longitude, callback) => {
         
         else { 
             callback(undefined, {
-                // current : body.currently , 
-                // location : body.timezone , 
+                current : body.currently , 
+                location : body.timezone , 
                 forecast : body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + ' chance of rain'
                 
             }) 
